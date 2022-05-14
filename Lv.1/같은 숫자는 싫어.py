@@ -11,7 +11,7 @@ arr = [4, 4, 4, 3, 3] 이면 [4, 3] 을 return 합니다.
 """
 
 # 내 풀이)
-# 재귀함수 -> 효율성 테스트에서 실패
+# 재귀함수 -> 효율성 테스트에서 모두 실패
 # def solution(arr):
 # for i in range(len(arr)):
 #     if i < len(arr)-1 and arr[i] == arr[i+1]:
@@ -20,7 +20,7 @@ arr = [4, 4, 4, 3, 3] 이면 [4, 3] 을 return 합니다.
 
 # return arr
 
-# while문 -> 효율성 테스트에서 실패
+# while문 -> 효율성 테스트에서 모두 실패
 # def solution(arr):
 #     i = 0
 #     while(i < len(arr) - 1):
@@ -32,6 +32,24 @@ arr = [4, 4, 4, 3, 3] 이면 [4, 3] 을 return 합니다.
 #     return arr
 
 # 질문을 통해) 기존 배열의 원소를 빼는 것보다, 새 배열에 추가하는 방식이 더 빠르다는 것을 알게됨.
+# 삭제 -> 추가로 코드를 바꿔봤지만, 효율성 테스트 4개중 3개만 성공
+# def solution(arr):
+#     i = 0
+#     answer = []
+#     while i < len(arr) - 1:
+#         if arr[i-1] != arr[i] != arr[i+1]:
+#             answer.append(arr[i])
+#             i += 1
+#         elif arr[i] == arr[i+1]:
+#             if len(answer) > 0 and answer[-1] == arr[i]:
+#                 i += 1
+#             else:
+#                 answer.append(arr[i])
+#                 i += 1
+#         else:
+#             i += 1
+
+#     return answer
 
 
 # print(solution([1, 1, 3, 3, 0, 1, 1]))

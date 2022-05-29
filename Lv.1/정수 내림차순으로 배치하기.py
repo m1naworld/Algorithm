@@ -6,12 +6,27 @@ n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수�
 """
 
 
-# 풀이 생각 중)
+# 내풀이)
 def solution(n):
     answer = []
     for i in str(n):
         answer.append(int(i))
-    return sorted(answer, reverse=True)
+    new_answer = sorted(answer, reverse=True)
+    result = ''.join(str(s) for s in new_answer)
+    return int(result)
 
 
 print(solution(118372))
+
+
+# 다른사람 풀이)
+def solution1(n):
+    ls = list(str(int(n)))
+    ls.sort(reverse=True)
+    return int("".join(ls))
+
+
+def solution1(n):
+    return int("".join(list(sorted(str(n)), reverse=True)))
+
+# sorted하면 리스트로 반환해서 나오기 때문에 list로 감싸줄 필요 없음.

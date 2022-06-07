@@ -9,5 +9,7 @@ nums에 있는 숫자들 중 서로 다른 3개를 골라 더했을 때
 
 # 풀이 생각 중
 def solution(nums):
-    answer = -1
-    return answer
+    answer = 0
+    # 3개씩 선정
+    # 소수 분별
+    return

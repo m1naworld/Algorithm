@@ -6,7 +6,7 @@ nums에 있는 숫자들 중 서로 다른 3개를 골라 더했을 때
 소수가 되는 경우의 개수를 return 하도록 solution 함수를 완성해주세요.
 """
 
-# 풀이 생각 중
+# 내 풀이
 import itertools
 
 
@@ -14,19 +14,16 @@ def solution(nums):
     answer = []
     # 3개씩 선정
     result = list(itertools.permutations(nums, 3))
-    print(result)
+
     for i in result:
         x = sum(i)
-        print(x)
         if x == 1 or x == 2 or x == 3:
             if x not in answer:
                 answer.append(x)
-        elif x % 2 != 0 | x % 3 != 0:
+        elif x % 2 != 0 and x % 3 != 0:
             if x not in answer:
                 answer.append(x)
-    print(answer)
-    print(f"확인 중: {8 % 2}")
-    return len(set(answer))
+    return len(answer)
 
 
 print(solution([1, 2, 3, 4]))

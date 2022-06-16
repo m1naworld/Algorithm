@@ -9,17 +9,15 @@ nums에 있는 숫자들 중 서로 다른 3개를 골라 더했을 때
 # 내 풀이
 import itertools
 
-import soupsieve
-
 
 def solution(nums):
     answer = []
     # 3개씩 선정
-    result = list(itertools.permutations(nums, 3))
+    result = list(itertools.combinations(nums, 3))
     print(result)
     for i in result:
         x = sum(i)
-        if x == 5 or x == 7:
+        if x == 7:
             if x not in answer:
                 answer.append(x)
         elif x % 2 != 0 and x % 3 != 0 and x % 5 != 0 and x % 7 != 0:

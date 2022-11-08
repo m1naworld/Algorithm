@@ -36,3 +36,38 @@ print(solution(3, 20, 4, 7))
 # 정말 생각의 전환!!의 중요성!
 # 같은 코드에 for문 도는 순서만 반대로 바꿨다.
 # 큰 수부터 돌 경우 약수를 공통으로 가지고 있는 처음의 경우가 바로 최대공약수! 작은 수 부터 돌 경우 최대 공약수를 찾지 못하는 문제를 해결하게 되었다!
+
+
+######################################
+
+
+# 문제 3.
+
+"""
+정수 배열 numbers가 매개변수로 주어집니다. 
+numbers의 각 원소에 두배한 원소를 가진 배열을 return하도록 solution 함수를 완성해주세요.
+"""
+
+
+def solution1(numbers):
+    for i, num in enumerate(numbers):
+        numbers[i] = num*2
+
+    return numbers
+
+
+solution1([1, 2, 3, 4, 5])
+
+# 리스트 내포(List comprehension)
+# 리스트 안에 for문을 포함하는 리스트 내포를 사용하면 좀 더 편리하고 직관적인 프로그램을 만들 수 있음
+# 리스트 내포 일반 문법: [표현식 for 항목 in 반복가능객체 if 조건문]
+
+# 위의 코드를 리스트 내포를 활용해 변경해 보기.
+
+
+def solution2(numbers):
+    return [num*2 for num in numbers]
+
+# solution1() 실행 결과, 가장 오래 걸린 시간: 0.13ms
+# solution2() 실행 결과, 가장 오래 걸린 시간: 0.8ms
+# 리스트 내포를 활용한 함수가 더욱 빠른걸 확인 할 수 있었다!

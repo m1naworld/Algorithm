@@ -22,21 +22,20 @@ A, B 두 개의 집합이 주어지면 두 집합의 공통 원소를 추출하�
 """
 
 
-def soultion(n, n_list, m, m_list):
-    min_num = n if n <= m else m
-    min_list = n_list if min_num == n else m_list
+def solution(n, n_list, m, m_list):
 
-    for i in min_list:
-        min_list.append(i)
+    for i in n_list:
+        print(i)
+        m_list.append(i)
 
-    min_list.sort()
-    return min_list
-
-
-print(soultion(3, [1, 3, 5], 5, [2, 3, 6, 7, 9]))
+    m_list.sort()
+    return m_list
 
 
-def soultion1(n, n_list, m, m_list):
+print(solution(3, [1, 3, 5], 5, [2, 3, 6, 7, 9]))
+
+
+def solution1(n, n_list, m, m_list):
 
     index = 0
 
@@ -54,4 +53,36 @@ def soultion1(n, n_list, m, m_list):
     return m_list
 
 
-print(soultion1(3, [2, 3, 6, 7, 9], 5,  [1, 3, 5]))
+print(solution1(5, [2, 3, 6, 7, 9], 3,  [1, 3, 5]))
+
+
+# 아래의 코드는 이중 for문을 사용했을 경우 시간복잡도가 n제곱이었다면,
+# while문을 통해 시간 복잡도가 n으로 줄었다.
+def solution2(n, arr1, m, arr2):
+    answer = []
+
+    p1 = 0
+    p2 = 0
+
+    while(p1 < n and p2 < m):
+        print(p1, p2)
+        if(arr1[p1] <= arr2[p2]):
+            answer.append(arr1[p1])
+            p1 += 1
+        else:
+            answer.append(arr2[p2])
+            p2 += 1
+
+    while(p1 < n):
+        print("p1", p1)
+        answer.append(arr1[p1])
+        p1 += 1
+
+    while(p2 < m):
+        print("p2", p2)
+        answer.append(arr2[p2])
+
+    return answer
+
+
+print(solution2(5, [2, 3, 6, 7, 9], 3,  [1, 3, 5]))
